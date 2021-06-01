@@ -1,0 +1,12 @@
+YAML Configuration files - Reference
+
+
+    Configuration 1
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- bash: echo "Our First Pipeline"
+  displayName: First job
+
