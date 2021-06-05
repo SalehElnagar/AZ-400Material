@@ -1,0 +1,35 @@
+// This is for publishing your .Net Core application from command prompt
+
+dotnet publish
+
+// This is for building your docker image
+
+sudo docker build -t dotnetapp .
+
+// This is for running your custom image as a container
+
+sudo docker run -d -p 80:80 dotnetapp
+
+
+// Install the Azure command line interface
+
+curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+
+    gpg --dearmor | \
+
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+
+AZ_REPO=$(lsb_release -cs)
+
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
+
+sudo apt-get update
+
+sudo apt-get install azure-cli
+
+sudo az acr login --name devopsdemo100
+
+sudo docker tag dotnetapp devopsdemo100.azurecr.io/dotnetapp
+sudo docker push devopsdemo100.azurecr.io/dotnetapp
