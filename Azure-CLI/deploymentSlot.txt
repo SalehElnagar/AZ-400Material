@@ -1,0 +1,1 @@
+az webapp deployment slot create --name webappName -g resourceGroupName --slot slotName

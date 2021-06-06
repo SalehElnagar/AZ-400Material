@@ -1,0 +1,10 @@
+You can use the following in the Azure App Service Settings task for Azure Release Pipelines
+
+[
+{
+"name": "dbconnectionstring",
+"value": "$(SQL_ConnectionString)",
+"type": "SQLAzure",
+"slotSetting": false
+}
+]

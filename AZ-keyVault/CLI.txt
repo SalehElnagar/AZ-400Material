@@ -1,0 +1,1 @@
+az vm create -g resourceGroupName -l resourceRegion --image win2019datacenter --admin-username userName --admin-password $(vmpassword)

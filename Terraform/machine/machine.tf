@@ -1,5 +1,4 @@
 provider "azurerm"{
-version = "=2.61"
 features {}
 }
 variable "prefix" {

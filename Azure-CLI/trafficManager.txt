@@ -1,0 +1,6 @@
+//To fetch the web app id 
+$webid=az resource list --name 'yourWebappName' --query [].id --output tsv
+$id = '"{0}"' -f $webid
+
+//To create new endpoint
+az network traffic-manager endpoint create -g resourceGroupName --profile-name yourProfileName -n endpoint-version2 --type azureEndpoints --target-resource-id $id --endpoint-status enabled --priority 2

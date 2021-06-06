@@ -1,0 +1,20 @@
+// install helm on windows machine
+choco install kubernetes-helm
+
+// Ensure the helm client can fetch the pre-configured helm charts
+helm repo add stable https://charts.bitnami.com/bitnami
+
+// To see the pre-created charts or packages
+helm search repo stable
+
+//To search for specefic image
+helm search hub mysql
+
+//To search for specefic image in officaial stable repos
+helm search repo mysql
+
+// Create new empty helm project
+helm create myChart
+
+// Install the mysql chart
+helm install app-sql stable/mysql

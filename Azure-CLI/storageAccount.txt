@@ -1,0 +1,2 @@
+az storage account create -g newgrp1 -n terraform10001 -l centralus --sku Standard_LRS
+az storage container create --name terraform --account-name terraform10001 
